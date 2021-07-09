@@ -1,4 +1,4 @@
-# Timbos Readme Generator 
+# Example Project [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
 
 ## Description 
 
@@ -9,8 +9,9 @@ Your GitHub profile is an extremely important aspect of your public identity as 
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contribute](#contribute)
-* [License](#license)
 * [Tests](#tests)
+* [License](#license)
+* [Questions](#questions)
 
 ## Installation 
 
@@ -24,11 +25,17 @@ Provide instructions and examples for use. Include screenshots as needed.
 
 If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. 
 
-## License 
-
-Creative Commons 
-
 ## Tests 
 
 Go the extra mile and write tests for your application. Then provide examples on how to run them. 
+
+## License 
+
+This project is using the [Creative Commons](http://creativecommons.org/publicdomain/zero/1.0/) license. 
+
+## Questions 
+
+[Github Account](https://github.com/TimPrimmer) 
+
+If you have any further questions please reach out to: <timprimmer@gmail.com> 
 
