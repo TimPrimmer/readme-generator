@@ -13,6 +13,7 @@ A Node app that generates a professional readme based on user input via inquirer
 * [License](#license)
 * [Challenges](#challenges)
 * [Screenshot](#screenshot)
+* [Video](#video)
 
 ## Installation 
 
