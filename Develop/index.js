@@ -4,6 +4,18 @@ const fs = require('fs');
 const markdown = require('./utils/generateMarkdown');
 const myArgs = process.argv.slice(2);
 
+// used if the user passes in the "test" parameter when starting the node app
+let mockData = {
+  title: "Example Project",
+  desc: "Your GitHub profile is an extremely important aspect of your public identity as a developer. A well-crafted one allows you to show off your work to other developers as well as potential employers. An important component of your GitHub profile—and one that many new developers often overlook—is the README.md file.",
+  install: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
+  usage: "Provide instructions and examples for use. Include screenshots as needed.",
+  contribute: "If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so.",
+  tests: "Go the extra mile and write tests for your application. Then provide examples on how to run them.",
+  license: "Creative Commons",
+  username: "TimPrimmer",
+  email: "timprimmer@gmail.com"
+};
 
 // our giant questions array for inquirer
 const questions = [
@@ -100,20 +112,6 @@ const questions = [
   },
 ];
 
-
-let mockData = {
-  title: "Example Project",
-  desc: "Your GitHub profile is an extremely important aspect of your public identity as a developer. A well-crafted one allows you to show off your work to other developers as well as potential employers. An important component of your GitHub profile—and one that many new developers often overlook—is the README.md file.",
-  install: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
-  usage: "Provide instructions and examples for use. Include screenshots as needed.",
-  contribute: "If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so.",
-  tests: "Go the extra mile and write tests for your application. Then provide examples on how to run them.",
-  license: "Creative Commons",
-  username: "TimPrimmer",
-  email: "timprimmer@gmail.com"
-};
-
-
 // function to write README file
 const writeToFile = (fileName, data) => {
   fs.writeFile(fileName, data, err => { // writing the file to the readme
@@ -121,7 +119,7 @@ const writeToFile = (fileName, data) => {
       console.log("Readme generation failed.");
       return console.error(err);
     } else {
-      console.log("Readme generated successfully! Check the main folder for the file.");
+      console.log("Readme generated successfully! Check the output folder for the file.");
     }
   });
 }
@@ -131,12 +129,12 @@ const init = () => {
   let formattedReadme = "";
   if (myArgs[0] === "test") { // if the user passes in "test" as the only argument, it will use the mock data instead skipping the prompts
     formattedReadme = markdown(mockData);
-    writeToFile("README.md", formattedReadme);
+    writeToFile("./output/Example_README.md", formattedReadme);
   }
   else {
     inquirer.prompt(questions).then((answers) => { // prompt the user for their project details
       formattedReadme = markdown(answers); 
-      writeToFile("README.md", formattedReadme);
+      writeToFile("./output/README.md", formattedReadme);
     });
   }
 }
